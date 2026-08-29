@@ -2,8 +2,6 @@
 
 These are the queries I wrote and confirmed on screen during the lab.
 
-A note on field names, because it tripped me up: the endpoint events carry `source = WinEventLog:Security` and `sourcetype = WinEventLog`. An earlier draft of my report used `sourcetype="WinEventLog:Security"`, which matches nothing in this Splunk. The screenshots show the working form, and the working form is what you get below. Same story on the firewall side: `sourcetype = syslog` with extracted fields like `dst_port`, `src_ip`, `dst_ip`, `action`, and `Data_length`.
-
 ## Query 1: File Access on the Victim (Event 4663)
 
 The endpoint tripwire. Fires when any audited file under Documents is read.
