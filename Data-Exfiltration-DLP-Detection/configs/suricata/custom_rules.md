@@ -11,9 +11,9 @@ The Suricata alert fired during the exfiltration and was visible in Splunk along
 - **Signature:** `SMB Exfiltration LAN to WAN`
 - **Priority:** 3
 - **Protocol:** TCP
-- **Source:** 192.168.56.104:50995
+- **Source:** 192.168.56.104:any
 - **Destination:** 192.168.57.10:445
-- **Direction:** to_server
+- **Direction:** any
 
 ## The Custom Rule
 
