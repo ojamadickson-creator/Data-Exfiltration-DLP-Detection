@@ -66,8 +66,7 @@ Sum the SMB data volume per source host to establish a baseline of file sharing 
 
 ```spl
 index=main sourcetype=syslog dst_port=445 action=pass
-| stats sum(Data_length) as total_out by src_ip
-```
+| stats sum(Data_length) as total_out by src_i
 ```
 
 ## Turning a Query into an Alert
