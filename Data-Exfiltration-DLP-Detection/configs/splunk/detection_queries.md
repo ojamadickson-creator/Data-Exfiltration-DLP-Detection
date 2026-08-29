@@ -68,16 +68,6 @@ Sum the SMB data volume per source host to establish a baseline of file sharing 
 index=main sourcetype=syslog dst_port=445 action=pass
 | stats sum(Data_length) as total_out by src_ip
 ```
-
-## Query 6: Statistical Anomaly Detection
-
-```spl
-index=main sourcetype=syslog dst_port=445 action=pass
-| stats sum(Data_length) as total_out by src_ip
-| eventstats avg(total_out) as avg_out stdev(total_out) as stdev_out
-| eval threshold = avg_out + (3 * stdev_out)
-| where total_out > threshold
-| table src_ip total_out avg_out threshold
 ```
 
 ## Turning a Query into an Alert
