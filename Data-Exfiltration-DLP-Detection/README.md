@@ -1,5 +1,23 @@
 # Simulated Data Exfiltration & DLP Detection
 
+
+![Splunk](https://img.shields.io/badge/Splunk-Enterprise-f05a28?style=flat-square&logo=splunk&logoColor=white)
+![OPNsense](https://img.shields.io/badge/OPNsense-Firewall%20%26%20pf-d94f00?style=flat-square)
+![Suricata](https://img.shields.io/badge/Suricata-Custom%20IDS-ef3b24?style=flat-square)
+![PowerShell](https://img.shields.io/badge/PowerShell-Auditpol%20%26%20Scripting-5391FE?style=flat-square&logo=powershell&logoColor=white)
+![Windows Server](https://img.shields.io/badge/Windows%20Server-Active%20Directory%20%2F%20SACLs-0078D4?style=flat-square&logo=windows&logoColor=white)
+![Kali Linux](https://img.shields.io/badge/Kali%20Linux-Impacket%20%26%20SMB-557C94?style=flat-square&logo=kalilinux&logoColor=white)
+
+> **Portfolio Project:** A segmented multi-subnet virtual SOC lab spanning OPNsense, Windows 10, Windows Server (AD), Kali Linux, and Splunk Enterprise. Simulates, detects, and isolates an active data exfiltration attack chain using host auditing (SACLs / Event ID 4663), custom Suricata IDS signatures, and surgical Layer 4 containment rules (`pfctl`) with zero disruption to internal management interfaces.
+
+---
+
+### 🎯 Quick Highlights & Role Fit
+
+* **Target Roles:** SOC Analyst (Tier 1 / Tier 2) | Detection Engineer | Incident Responder
+* **Key Deliverables:** Multi-layer detection pipeline (Host SACLs + Suricata IDS + Splunk SPL) paired with empirical On-Off-On containment verification (`pfctl` & `tcpdump`).
+* **Architecture Style:** Segmented dual-subnet perimeter (LAN vs. WAN/DMZ) enforcing strict outbound protocol inspection and behavioral egress filtering.
+
 **Live demo:** https://youtu.be/Z6pmFaNt-tQ
 
 This is a home SOC lab project I built to show how I would detect and stop a data exfiltration attack from start to finish. I simulated the entire chain: an attacker compressing sensitive files on a Windows endpoint, copying them out over SMB across a perimeter firewall, and me catching it from two angles in Splunk before building a surgical containment rule that actually worked.
