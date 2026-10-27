@@ -31,6 +31,16 @@ Three traffic flows mattered in this lab:
 Full topology details: [`architecture/topology.md`](architecture/topology.md)
 
 ---
+##Skills Demonstrated 
+Detection Engineering & SIEM: Engineered Splunk SPL queries combining endpoint object auditing (Event ID 4663) and OPNsense firewall syslog to detect evasion-prone, low-volume SMB exfiltration crossing internal trust boundaries.
+
+Network Threat Containment: Diagnosed and remediated complex perimeter routing and firewall rule-ordering failures (pfctl, tcpdump), deploying surgical Layer 4 block rules that mitigated active exfiltration while preserving administrative traffic.
+
+IDS/IPS Engineering: Authored and tested custom Suricata inspection signatures targeting suspicious cross-zone SMB sessions, achieving full detection coverage across endpoint, firewall, and IDS telemetry layers.
+
+Host Auditing & Forensics: Configured fine-grained System Access Control Lists (SACLs) and native Windows audit policies (auditpol) to record unauthorized access attempts and script execution handles on sensitive directories.
+
+Adversary Emulation: Simulated real-world adversary behavior using Impacket and PowerShell to stage and compress sensitive mock PII, mapping the operational lifecycle directly to MITRE ATT&CK T1560 and T1048.
 
 ## The Attack I Simulated
 
